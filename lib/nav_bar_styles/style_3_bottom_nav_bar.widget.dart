@@ -43,7 +43,7 @@ class _BottomNavStyle3 extends StatelessWidget {
                       const SizedBox.shrink()
                     else
                       Padding(
-                        padding: const EdgeInsets.only(top: 15),
+                        padding: const EdgeInsets.only(top: 1),
                         child: Material(
                           type: MaterialType.transparency,
                           child: DefaultTextStyle.merge(
@@ -91,17 +91,18 @@ class _BottomNavStyle3 extends StatelessWidget {
                 duration: navBarEssentials.itemAnimationProperties.duration,
                 curve: navBarEssentials.itemAnimationProperties.curve,
                 color: Colors.transparent,
-                width: navBarEssentials.selectedIndex == 0
-                    ? MediaQuery.of(context).size.width * 0.0
-                    : itemWidth * navBarEssentials.selectedIndex,
-                height: 4,
+                width: (navBarEssentials.selectedIndex == 0
+                        ? MediaQuery.of(context).size.width * 0.0
+                        : itemWidth * navBarEssentials.selectedIndex) +
+                    12,
+                height: 2,
               ),
               Flexible(
                 child: AnimatedContainer(
                   duration: navBarEssentials.itemAnimationProperties.duration,
                   curve: navBarEssentials.itemAnimationProperties.curve,
-                  width: itemWidth,
-                  height: 4,
+                  width: itemWidth - 24,
+                  height: 2,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: selectedItemActiveColor,
